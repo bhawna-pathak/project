@@ -13,7 +13,7 @@
                 color: red;
             }
             .elem-error {
-                border: 2px solid red;
+                border: 3px solid red;
             }
         </style>
     </head>
