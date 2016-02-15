@@ -26,7 +26,7 @@
                 <div class="form_item"> <label> Last Name : </label><input type="text" class="lastname" name="lastname"> </div>
                 <div class="form_item"> <label> User Name : </label><input type="text" class="username" name="username"> </div>
                 <div class="form_item"> <label> Password : </label><input type="password" class="password" name="password"> </div>
-                <div class="form_item"> <label> Confirm Password : </label><input type="password" class="confirm" name="confirm"> </div> 
+                <div class="form_item"> <label> Confirm Password : </label><input type="password" class="confirm" name="confirm"> </div>
                 <div class="form_item"> <label> Email Id : </label><input type="text" class="email" name="email"> </div>
                 <div class="form_item"> <input type ="submit" id="submit" value="submit" name="submit"> </div>
 
@@ -106,6 +106,7 @@
             echo 'Error in creating database' . $conn->error;
         }
 //        $conn->close;
+       echo "<br/>This line has been added by Himanshu";
         ?>
     </body>
 </html>
