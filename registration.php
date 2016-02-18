@@ -36,8 +36,8 @@
         <script src="../jquery.min.js">
         </script>
         <script>
-            $(document).ready(function () {
-                $(".registration").submit(function (event) {
+            $(document).ready(function() {
+                $(".registration").submit(function(event) {
                     if (validateForm()) {
                         return;
                     }
@@ -81,7 +81,7 @@
                     $("input.elem-error:first").focus();
                     return isValid;
                 }
-                $("input").change(function () {
+                $("input").change(function() {
                     if ($(this).hasClass('elem-error')) {
                         console.log($(this));
                         $(this).removeClass('elem-error').closest('div.form_item').find('span.error').hide().remove();
@@ -93,20 +93,45 @@
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $conn = new mysqli($servername, $username, $password);
-        if ($conn->connect_error) {
-            die("Connection failed : " . $conn->connect_error);
-        }
+        $dbname = "registration";
+        $conn = new mysqli($servername, $username, $password,$dbname);
+        
+//        established a connection
+        
+//        if ($conn->connect_error) {
+//            die("Connection failed : " . $conn->connect_error);
+//        }
 //        echo "Connection successful";
 
-        $sql = "DROP DATABASE register";
-        if ($conn->query($sql) === true) {
-            echo 'Database is successfully created';
+        
+//        created a database named registration
+//        
+//        $sql = "CREATE DATABASE registration";
+//        if ($conn->query($sql) === true) {
+//            echo 'Database is successfully created';
+//        } else {
+//            echo 'Error in creating database' . $conn->error;
+//        }
+
+//        created a table named information
+        
+        $sql = "CREATE TABLE information(
+                id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+                firstname VARCHAR(30) NOT NULL,
+                lastname VARCHAR(30) NOT NULL,
+                username VARCHAR(30) NOT NULL,
+                password VARCHAR(30) NOT NULL,
+                confirm VARCHAR(30) NOT NULL,
+                email VARCHAR(50)NOT NULL
+                )";
+        if ($conn->query($sql) == true) {
+            echo 'table is created';
         } else {
-            echo 'Error in creating database' . $conn->error;
+            echo 'Error in creating table' . $conn->error;
         }
+        
+        
 //        $conn->close;
-       echo "<br/>This line has been added by Himanshu";
         ?>
     </body>
 </html>
