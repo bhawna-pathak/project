@@ -33,7 +33,11 @@
             </form>
 
         </div>
+<<<<<<< HEAD
         <script src="jquery-1.12.0.min.js">
+=======
+        <script src="../jquery.min.js">
+>>>>>>> be860f6af885d3037d8d473c9c648ee90cc69236
         </script>
         <script>
             $(document).ready(function() {
@@ -90,6 +94,7 @@
             });
         </script>
         <?php
+<<<<<<< HEAD
         if (isset($_POST["submit"])) {
             $servername = "localhost";
             $username = "root";
@@ -98,18 +103,37 @@
             $conn = new mysqli($servername, $username, $password, $dbname);
 
 //        established a connection
+=======
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "registration";
+        $conn = new mysqli($servername, $username, $password,$dbname);
+        
+//        established a connection
+        
+>>>>>>> be860f6af885d3037d8d473c9c648ee90cc69236
 //        if ($conn->connect_error) {
 //            die("Connection failed : " . $conn->connect_error);
 //        }
 //        echo "Connection successful";
+<<<<<<< HEAD
 //        created a database named project
 //        
 //        $sql = "CREATE DATABASE project";
+=======
+
+        
+//        created a database named registration
+//        
+//        $sql = "CREATE DATABASE registration";
+>>>>>>> be860f6af885d3037d8d473c9c648ee90cc69236
 //        if ($conn->query($sql) === true) {
 //            echo 'Database is successfully created';
 //        } else {
 //            echo 'Error in creating database' . $conn->error;
 //        }
+<<<<<<< HEAD
 //        created a table named registration
 //        $sql = "CREATE TABLE registration(
 //                id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
@@ -142,6 +166,28 @@
         }
 
 //          $conn->close;
+=======
+
+//        created a table named information
+        
+        $sql = "CREATE TABLE information(
+                id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+                firstname VARCHAR(30) NOT NULL,
+                lastname VARCHAR(30) NOT NULL,
+                username VARCHAR(30) NOT NULL,
+                password VARCHAR(30) NOT NULL,
+                confirm VARCHAR(30) NOT NULL,
+                email VARCHAR(50)NOT NULL
+                )";
+        if ($conn->query($sql) == true) {
+            echo 'table is created';
+        } else {
+            echo 'Error in creating table' . $conn->error;
+        }
+        
+        
+//        $conn->close;
+>>>>>>> be860f6af885d3037d8d473c9c648ee90cc69236
         ?>
     </body>
 </html>
