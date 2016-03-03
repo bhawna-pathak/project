@@ -132,7 +132,7 @@
 //insert data from page to table named registration
 
             $sql = "INSERT INTO registration (firstname, lastname, username, password, confirm, email)       
-VALUES ('" . $_POST["firstname"] . "','" . $_POST["lastname"] . "','" . $_POST["username"] . "','" . $_POST["password"] . "','" . $_POST["confirm"] . "','" . $_POST["email"] . "')";
+            VALUES ('" . $_POST["firstname"] . "','" . $_POST["lastname"] . "','" . $_POST["username"] . "','" . $_POST["password"] . "','" . $_POST["confirm"] . "','" . $_POST["email"] . "')";
 
             if ($conn->query($sql) === TRUE) {
                 echo "<script type= 'text/javascript'>alert('New record created successfully');</script>";
